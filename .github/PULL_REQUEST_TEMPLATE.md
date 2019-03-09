@@ -12,7 +12,7 @@ While we look over every pull request, we maintain a focus on this project's cur
 
 <!-- Put an 'x' in the boxes that apply. -->
 
-- [ ] I have read the [contributing](https://github.com/uwreact/uwreact_robot/blob/master/CONTRIBUTING.md) guide.
+- [ ] I have read the [contributing](https://github.com/uwreact/frc_gym/blob/master/CONTRIBUTING.md) guide.
 - [ ] I have referenced relevant issues.
 - [ ] I have labeled accordingly.
 - [ ] I have detailed my changes as much as possible.
@@ -23,5 +23,4 @@ While we look over every pull request, we maintain a focus on this project's cur
 
 - [ ] I have added tests.
 - [ ] I have added necessary documentation.
-- [ ] I have auto formatted using clang-format or yapf.
-- [ ] I have tested my changes on real hardware.
+- [ ] I have auto formatted using yapf.
