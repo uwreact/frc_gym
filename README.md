@@ -1,6 +1,6 @@
 # frc_gym
 
-OpenAI Gym environment enabling FRC teams to train their robots using reinforcement learning.
+OpenAI Gym environment enabling FRC teams to train their robots
 
 ## Code Style
 
