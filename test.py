@@ -1,7 +1,8 @@
 import gym
-import gym_frc
+import frc_gym
 
-env = gym.make('Graph-v2019')
+env = gym.make('FRCGraph2019-v1')
+
 
 
 
