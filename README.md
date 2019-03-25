@@ -2,6 +2,13 @@
 
 OpenAI Gym environment enabling FRC teams to train their robots
 
+## Installation:
+1. Clone the envrionment 
+`git clone https://github.com/uwreact/frc_gym.git`
+`cd frc_gym`
+2. Install using pip
+`pip insatll -e .`
+
 ## Code Style
 
 We follow [PEP 8](https://www.python.org/dev/peps/pep-0008/). To make development easy, we provide configuration files for standard linting and static analysis tools such as [yapf](https://github.com/google/yapf).
