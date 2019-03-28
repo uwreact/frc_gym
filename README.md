@@ -15,7 +15,7 @@ OpenAI Gym environment enabling FRC teams to train their robots
 Environment for training robots based on the 2019 FRC Game. Coming soon!
 
 ### Banana Gym
-Initial testing environment based on[Banna Gym](https://github.com/MartinThoma/banana-gym). Imagine you are selling bananas one at a time. The bananas tend to spoil within a period of 3 days. The probability that you will sell the banana is given by:
+Initial testing environment based on[Banna Gym](https://github.com/MartinThoma/banana-gym). You are selling bananas one at a time, which spoil within a period of 3 days. The probability that you will sell the banana is given by:
 ![Alt Text](https://latex.codecogs.com/gif.latex?%24%24p%28x%29%20%3D%5Cfrac%7B1&plus;e%7D%7B%201%20&plus;%20e%5E%7B%28x&plus;1%29%7D%7D%24%24)
 Where x-1 is your profit, which is your reward. If you don’t sell the banana, then your reward is -1 (the price of the banana).
 
