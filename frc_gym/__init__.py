@@ -8,3 +8,7 @@ register(
     id='Banana-v1',
     entry_point='frc_gym.envs:BananaEnv',
 )
+register(
+    id='Proto-v1',
+    entry_point='frc_gym.envs:ProtoEnv',
+)
