@@ -11,6 +11,8 @@ protoEnv = gym.make("Proto-v1")
 #   2 = Rocket
 #   3 = Cargo Ship
 
+protoEnv.render()
+
 #We start at the Hab, move to player station to pick up cargo
 assert ((protoEnv.step(1)) == ([10, True], 0, False))
 # ([currentTime, Carying Cargo], reward, done)

@@ -2,6 +2,8 @@ import gym
 import numpy as np
 from gym import spaces, logger
 from gym.utils import seeding
+import networkx as nx
+import matplotlib.pyplot as plt
 
 
 class ProtoEnv(gym.Env):
@@ -119,7 +121,11 @@ class ProtoEnv(gym.Env):
 
     def render(self, mode='human'):
         # Implement a simple graph like using networkx
-        raise NotImplementedError
+        graph = nx.Graph()
+        graph.add_nodes_from([0, 1, 2, 3])
+
+        nx.draw_circular(graph, with_labels=True, font_weight='bold')
+        plt.show()
 
     def close(self):
         ...
