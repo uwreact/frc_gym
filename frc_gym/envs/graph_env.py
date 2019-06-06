@@ -7,6 +7,8 @@ import numpy as np
 # TODO: Ranking points
 # TODO: General Refactor
 # TODO: Basic Visualization
+# TODO: Update Read Me
+
 
 class GraphEnv(gym.Env):
     metadata = {'render.modes': ['human']}
@@ -19,7 +21,7 @@ class GraphEnv(gym.Env):
         self.currentState = 0
 
         # Observation Space:
-        # [time, carryingCargo, caryingFueld]
+        # [time, caryingHatch, caryingCargo]
         self.observation_space = spaces.MultiDiscrete([150, 1, 1])
         self.action_space = spaces.Discrete(4)
 
@@ -1896,6 +1898,9 @@ class GraphEnv(gym.Env):
         if (self.time >= 150):
             self.done = True
             self.time = 150
+
+        self.observation_space = [self.time, self.hasHatch, self.hasCargo]
+        return self.observation_space, reward, self.done
 
     def reset(self):
         self.hasCargo = False
