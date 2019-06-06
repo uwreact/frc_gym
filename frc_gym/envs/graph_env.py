@@ -5,7 +5,8 @@ import numpy as np
 # TODO: Better scoring
 # TODO: Check if rocket complete
 # TODO: Ranking points
-
+# TODO: General Refactor
+# TODO: Basic Visualization
 
 class GraphEnv(gym.Env):
     metadata = {'render.modes': ['human']}
