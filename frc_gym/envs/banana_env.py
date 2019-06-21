@@ -7,9 +7,11 @@ from gym import spaces
 import gym
 import numpy as np
 
+
 def get_chance(x):
     e = math.exp(1)
     return (1.0 + e) / (1. + math.exp(x + 1))
+
 
 class BananaEnv(gym.Env):
     def __init__(self):
@@ -25,10 +27,12 @@ class BananaEnv(gym.Env):
         self.action_space = spaces.Discrete(21)
 
         # Observation is the remaining time
-        low = np.array([0.0,  # remaining_tries
-                        ])
-        high = np.array([self.TOTAL_TIME_STEPS,  # remaining_tries
-                         ])
+        low = np.array([
+            0.0,  # remaining_tries
+        ])
+        high = np.array([
+            self.TOTAL_TIME_STEPS,  # remaining_tries
+        ])
         self.observation_space = spaces.Box(low, high, dtype=np.float32)
 
         # Store what the agent tried
@@ -73,8 +77,8 @@ class BananaEnv(gym.Env):
 
     def _take_action(self, action):
         self.action_episode_memory[self.curr_episode].append(action)
-        self.price = ((float(self.MAX_PRICE) /
-                      (self.action_space.n - 1)) * action)
+        self.price = ((float(self.MAX_PRICE) / (self.action_space.n - 1)) *
+                      action)
 
         chance_to_take = get_chance(self.price)
         banana_is_sold = (random.random() < chance_to_take)

@@ -2,29 +2,29 @@ import numpy as np
 import matplotlib.pyplot as plt
 import gym
 
+
 class GridWorldEnv(gym.Env):
-    
     def __init__(self, rows, columns, magicSquares):
-        self.grid = np.zeros((rows,columns))
+        self.grid = np.zeros((rows, columns))
         self.rows = rows
         self.columns = columns
 
         # Initialize State Space and remove terminal state (bottom right square)
-        self.stateSpace = [i for i in range (self.rows * self.columns)]
+        self.stateSpace = [i for i in range(self.rows * self.columns)]
         self.stateSpace.remove(self.rows * self.columns - 1)
 
         # State space plus contains the terminal spacae
-        self.stateSpacePlus = [i for i in range (self.rows * self.columns)]
+        self.stateSpacePlus = [i for i in range(self.rows * self.columns)]
 
         # State space is a 1d array, thus moves up and down are multiples of rows
-        self.actionSpace = {'U' : -self.rows, 'D': self.rows, 'L': -1, 'R': 1}
+        self.actionSpace = {'U': -self.rows, 'D': self.rows, 'L': -1, 'R': 1}
 
         self.possibleActions = ['U', 'D', 'L', 'R']
 
         self.addMagicSquares(magicSquares)
 
         self.agentPosition = 0
-    
+
     def addMagicSquares(self, magicSquares):
         self.magicSquares = magicSquares
         i = 2
@@ -39,15 +39,14 @@ class GridWorldEnv(gym.Env):
             self.grid[x][y] = i
             i += 1
 
-
     def isTerminalState(self, state):
         return state in self.stateSpacePlus and state not in self.stateSpace
-    
+
     def getAgentPosition(self):
         x = self.agentPosition // self.rows
         y = self.agentPosition % self.columns
-        return x,y
-    
+        return x, y
+
     def setState(self, state):
         x, y = self.getAgentPosition()
         self.grid[x][y] = 0
@@ -65,7 +64,7 @@ class GridWorldEnv(gym.Env):
             return True
         else:
             return False
-    
+
     def actionSpaceSample(self):
         return np.random.choice(self.possibleActions)
 
@@ -78,13 +77,15 @@ class GridWorldEnv(gym.Env):
 
         if not self.offGrid(resultingState, self.agentPosition):
             self.setState(resultingState)
-            return resultingState, reward, self.isTerminalState(self.agentPosition)
+            return resultingState, reward, self.isTerminalState(
+                self.agentPosition)
         else:
-            return self.agentPosition, reward, self.isTerminalState(self.agentPosition)
+            return self.agentPosition, reward, self.isTerminalState(
+                self.agentPosition)
 
     def reset(self):
         self.agentPosition = 0
-        self.grid = np.zeros((self.rows,self.columns))
+        self.grid = np.zeros((self.rows, self.columns))
         self.addMagicSquares({18: 54, 63: 14})
         return self.agentPosition
 
