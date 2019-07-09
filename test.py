@@ -3,8 +3,6 @@ import frc_gym
 
 env = gym.make('FrcGraph2019-v1')
 env2 = gym.make('Banana-v1')
-<<<<<<< HEAD
-=======
 protoEnv = gym.make("Proto-v1")
 
 # ProtoEnv Test
@@ -48,4 +46,3 @@ assert ((protoEnv.step(1)) == ([140, True], 0, False))
 
 # Go To Rocket
 assert ((protoEnv.step(2)) == ([150, True], 0, True))
->>>>>>> 05be9999f290ba00330468fa4653df37de04ad7d
