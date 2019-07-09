@@ -12,3 +12,8 @@ register(
     id='GridWorld-v1',
     entry_point='frc_gym.envs:GridWorld',
 )
+
+register(
+    id='Proto-v1',
+    entry_point='frc_gym.envs:ProtoEnv',
+)
